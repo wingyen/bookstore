@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- bootstrap style -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+     <link rel="stylesheet" href="style/style.css">
+
+    <title>Book Store</title>
+</head>
+
+<body>
+    <div class="container" id="bookShelf">
+        <header class="header">
+            <div class="row">
+                <div class="col" id="logo">
+                    <img src="style/Savoy-logo.png" alt="logo">
+                </div>
+                <div class="col ml-auto" id="head-right">
+
+                    <p>
+                        <input type="text" class="quicksearch" placeholder="Search">
+                    </p>
+                </div>
+            </div>
+        </header>
+
+        <div class="row grid d-flex ">
+
+            <div v-for="(book, value) in books" class="flip-container">
+                <div id="card">
+
+                    <div v-bind:style="{backgroundImage: 'url('+ book.coverImage +')',backgroundSize:'220px 330px',backgroundRepeat:'no-repeat'}" class="thisBook front face element-item">
+                        <div class="author" style="display: none">{{book.author}}</div>
+                        <div class="title" style="display: none">{{book.title}}</div>
+                        <div class="title" style="display: none">{{book.description}}</div>
+                    </div>
+                    <div class="back face element-item">
+                        <h5>{{book.title}}</h5>
+                        <p>{{book.author}}</p>
+                        <p>Description:</p>
+                        <p>{{book.description}}</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- vue -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.3/vue.js"></script>
+    <!-- isotope -->
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+    <!-- main js -->
+    <script src="script/main.js"></script>
+    <!-- filter -->
+    <script src="script/filter.js"></script>
+
+</body>
+
+</html>
