@@ -19,6 +19,7 @@ var app = new Vue({
                 .then(function (data) {
                     let books = data.books;
                     this.translateKeys(books);
+                    this.inputSearch();
 
                 }.bind(this)
 
