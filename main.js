@@ -46,31 +46,20 @@ var app = new Vue({
 
             return quality[randNum];
         },
+         inputSearch: function(){
+            $(document).ready(function(){
+                $("#quicksearch").on("keyup", function() {
+                  var value = $(this).val().toLowerCase();
+                  $(".thisBook").filter(function() {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                  });
+                });
+              })
+        }
 
 
-    },
-    // computed: {
-    //     coverImage: function (params) {
-    //         let vm = this;
-    //         let img = new Image();
-
-    //         let url = this.books.map(function () {
-    //             return coverImage;
-    //         });
-
-    //         img.onload = function () {
-    //             img.src = url
-
-    //         }
-    //         if (img.complete) {
-    //             vm.loading = false
-    //         }
-
-    //         return {
-    //             backgroundImage: `url(${this.image})`
-    //         }
-    //     }
-    // }
+    }
+   
 }
 );
 
@@ -80,35 +69,3 @@ var app = new Vue({
 
 
 
-
-// // quick search regex
-// var qsRegex;
-// // init Isotope
-// var $grid = $('.grid').isotope({
-//     itemSelector: '.element-item',
-//     layoutMode: 'fitRows',
-//     filter: function () {
-//         return qsRegex ? $(this).text().match(qsRegex) : true;
-//     }
-// });
-
-// // use value of search field to filter
-// var $quicksearch = $('.quicksearch').keyup(function () {
-//     qsRegex = new RegExp($quicksearch.val(), 'gi');
-//     $grid.isotope();
-// });
-
-// // debounce so filtering doesn't happen every millisecond
-// function debounce(fn, threshold) {
-//     var timeout;
-//     threshold = threshold || 100;
-//     return function debounced() {
-//         clearTimeout(timeout);
-//         var args = arguments;
-//         var _this = this;
-//         function delayed() {
-//             fn.apply(_this, args);
-//         }
-//         timeout = setTimeout(delayed, threshold);
-//     };
-// }
