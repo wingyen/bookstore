@@ -1,16 +1,16 @@
 /*img link https://s3-us-west-2.amazonaws.com/s.cdpn.io/16584/retina_wood.png*/
 
-
-
 body {
     background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/16584/retina_wood.png");
-    perspective: 1800px;   
 }
 
 .container {
-    margin-top: 5%;
-    width: 98% !important;
-    align-content: center;
+    margin-top: 20px;
+    width: 100%;
+}
+
+div{
+    display: block;
 }
 
 div>a, span {
@@ -49,15 +49,15 @@ input[type="text"] {
 } */
 
 /* clear fix */
-/* .grid:after {
+.grid:after {
   content: '';
   display: block;
   clear: both;
-} */
+}
 
 /* ---- .element-item ---- */
 
-div.thisBook {
+div.book {
   position: relative;
   float: left;
   width: 220px;
@@ -66,14 +66,16 @@ div.thisBook {
   padding: 5px;
   /* background: #888; */
   color: #262524;
-  display: -webkit-flex;
+
 }
 
 .row {
-    width: 100% !important;
+    /* width: 100% !important; */
     margin-left: 10px !important;
     margin-right: 5px !important;
 }
+
+/*--- flipping cards---*/
 
 .flip-container {
     position: relative;
@@ -82,13 +84,14 @@ div.thisBook {
 
 
 #card {
+    /* position: absolute; */
     width: 100%;
     height: 100%;
     transform-style: preserve-3d;
     transition: all 0.5s linear;
 }
 
-.flip-container:hover #card {
+.flip-container:hover #card{
     transform: rotateY(180deg);
     
 }
@@ -101,28 +104,21 @@ div.thisBook {
 }
 
 .face.back {
-    /* display: block; */
+    
     transform: rotateY(180deg);
-    box-sizing: border-box;
     padding: 10px;
     background-color: #aaa;
 }
 
 
 .back {
-    position: absolute;
-    /* float: left; */
-    width: 220px;
-    height: 330px;
-    margin: 12px;
-    padding: 5px;
-  background: #888;
+    background: #aaa;
     color: #f5f3f0;
     box-shadow: 8px 5px 5px rgb(148, 136, 136);
 
 }
 
-div>h5,p {
+div>p {
     text-align: left;
     font-size: 1rem;
     line-height: 1;
