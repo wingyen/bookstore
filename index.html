@@ -35,24 +35,33 @@
 
         <div class="row grid d-flex">
 
-            <div v-for="(book, value) in books" class="flip-container" id="book">
+            <div v-for="(book, value) in books" class="flip-container thisBook">
                 <div id="card">
 
                     <div v-bind:style="{backgroundImage: 'url('+ book.coverImage +')',backgroundSize:'220px 330px',backgroundRepeat:'no-repeat'}"
-                        class="thisBook front face ">
-                        <div class="element-item author" style="display: none">{{book.author}}</div>
-                        <div class="element-item title" style="display: none">{{book.title}}</div>
-                        <div class="element-item title" style="display: none">{{book.description}}</div>
+                        class="book front face">
+                        <div style="display: none">
+                            {{book.author}} 
+                            {{book.title}} 
+                            {{book.description}}
+                        </div>
                     </div>
                     <div class="back face">
                         <h5>{{book.title}}</h5>
                         <p>{{book.author}}</p>
                         <p>Description:</p>
                         <p>{{book.description}}</p>
+                        <p class="imglist">
+
+                            <a class="btn btn-primary d-block" data-fancybox="images" :data-thumb="book.detail" :data-src="book.detail" href="javascript:;"
+                                data-thumbs='{"autoStart":true}'>More Info</a>
+
+                        </p>
                     </div>
                 </div>
 
             </div>
+
 
         </div>
 
