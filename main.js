@@ -51,7 +51,7 @@ var app = new Vue({
             $(document).ready(function(){
                 $("#quicksearch").on("keyup", function() {
                   var value = $(this).val().toLowerCase();
-                  $(".thisBook .book").filter(function() {
+                  $(".thisBook .element-item").filter(function() {
                     $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
                   });
                 });
